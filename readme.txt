@@ -38,7 +38,7 @@ git checkout -- <file>
 
 删除文件
 手动删除，然后 git rm <file> 或者 git add<file>，然后 git commit
-------------------------------------------------------
+----------------------------------------------------------------------------------------------
 连接远程仓库
 
 用户主目录下创建SSH Key（每台需要推送的电脑都要创建一个不同的key）
@@ -55,12 +55,19 @@ git remote add origin https://github.com/sufuzhi/learngit.git
 推送（origin是远程库的名字，首次推送加 -u，以后可以不加）
 git push -u origin master
 
-克隆仓库
+快速克隆仓库
 git clone git@github.com:sufuzhi/gitskills.git
+----------------------------------------------------------------------------------------------
+使用分支
 
+创建并切换到分支
+git checkout -b dev
+相当于：
+git branch dev
+git checkout dev
 
-
-
+查看当前分支：
+git branch
 
 
 
