@@ -55,6 +55,9 @@ git remote add origin https://github.com/sufuzhi/learngit.git
 推送（origin是远程库的名字，首次推送加 -u，以后可以不加）
 git push -u origin master
 
+克隆仓库
+git clone git@github.com:sufuzhi/gitskills.git
+
 
 
 
