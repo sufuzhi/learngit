@@ -60,18 +60,27 @@ git clone git@github.com:sufuzhi/gitskills.git
 ----------------------------------------------------------------------------------------------
 使用分支
 
-创建并切换到分支
-git checkout -b dev
-相当于：
-git branch dev
-git checkout dev
+创建分支
+git branch <name>
 
-查看当前分支：
+切换分支：
+git checkout <name>
+或者
+git switch <name>
+
+创建+切换分支：
+git checkout -b <name>
+或者
+git switch -c <name>
+
+查看当前所有分支：
 git branch
 
+合并指定分支到当前分支
+git merge <name>
 
-
-
+删除指定分支
+git branch -d <name>
 
 
 
