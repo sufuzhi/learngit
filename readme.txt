@@ -82,7 +82,9 @@ git merge <name>
 删除指定分支
 git branch -d <name>
 
+
 合并时发生冲突master
+
 
 
 
