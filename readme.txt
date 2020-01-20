@@ -33,12 +33,27 @@ git reflog
 git reset HEAD <file>
 
 丢弃工作区的内容，恢复到最近一次git commit或git add时的状态（一定要有 -- ，而且后面有空格）
+也用于恢复误删文件
 git checkout -- <file>
 
+删除文件
+手动删除，然后 git rm <file> 或者 git add<file>，然后 git commit
+------------------------------------------------------
+连接远程仓库
 
+用户主目录下创建SSH Key（每台需要推送的电脑都要创建一个不同的key）
+ssh-keygen -t rsa -C "youremail@example.com"
 
+登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
 
+把本地仓库关联远程仓库
+git remote add origin git@github.com:sufuzhi/learngit.git
+或
+git remote add origin https://github.com/sufuzhi/learngit.git
 
+推送（origin是远程库的名字，首次推送加 -u，以后可以不加）
+git push -u origin master
 
 
 
