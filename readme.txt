@@ -1,4 +1,6 @@
-git文件
-git初始化
-git添加
-git提交
+初始化
+git init 
+
+添加文件到Git仓库
+git add <file> 
+git commit -m <message>
