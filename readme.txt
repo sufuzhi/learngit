@@ -127,8 +127,25 @@ git remote -v
 推送分支，指定本地分支，Git就会把该分支推送到远程库对应的远程分支上：
 git push origin master
 
-要在dev分支上开发，就必须创建远程origin的dev分支到本地：
+要在dev分支上开发，方法：
+（一）新建分支前，先拉取远程
+git pull
+然后创建远程origin的dev分支到本地：
 git checkout -b dev origin/dev
+
+（二）如果已经创建了分支dev，拉取远程可能是失败的
+原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+git branch --set-upstream-to=origin/dev dev
+然后可以推送和拉取了；如果拉取后有冲突，先手动修改合并，在提交；
+
+
+
+
+
+
+
+
+
 
 
 
