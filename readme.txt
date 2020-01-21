@@ -11,7 +11,7 @@ git status
 查看修改内容
 git diff
 
-查看历史记录
+查看历史记录（退出方法：输入法英文状态下按字母Q键）
 git log
 让记录显示的有条理
 git log --pretty=oneline
@@ -82,9 +82,9 @@ git merge <name>
 删除指定分支
 git branch -d <name>
 
-
-合并时发生冲突master
-
-
-
+当Git无法自动合并分支时，把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+查看合并情况：
+git log --graph --pretty=oneline --abbrev-commit
+--graph 可以看到合并图
+--abbrev-commit 不显示完整的40字节十六进制提交对象名称，只显示部分前缀
 
