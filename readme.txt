@@ -138,7 +138,10 @@ git checkout -b dev origin/dev
 git branch --set-upstream-to=origin/dev dev
 然后可以推送和拉取了；如果拉取后有冲突，先手动修改合并，在提交；
 
-
+变基
+git rebase
+rebase操作可以把本地未push的分叉提交历史整理成直线；
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
 
 
 
