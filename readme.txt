@@ -128,7 +128,11 @@ git remote -v
 git push origin master
 
 要在dev分支上开发，就必须创建远程origin的dev分支到本地：
+先拉取远程信息
+git pull
+
+然后从远程dev创建本地dev，并跟踪远程dev
 git checkout -b dev origin/dev
 
 
-
+test
