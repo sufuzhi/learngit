@@ -89,3 +89,25 @@ git log --graph --pretty=oneline --abbrev-commit
 --abbrev-commit 不显示完整的40字节十六进制提交对象名称，只显示部分前缀
 -------------------------------------------------------------------------------------
 分支管理策略
+强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息
+--no-ff参数，表示禁用Fast forward
+git merge --no-ff -m "merge with no-ff" dev
+
+你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
