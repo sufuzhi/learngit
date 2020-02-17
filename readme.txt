@@ -54,6 +54,7 @@ git remote add origin https://github.com/sufuzhi/learngit.git
 
 推送（origin是远程库的名字，首次推送加 -u，以后可以不加）
 git push -u origin master
+强制推送在后面加 -f，但是这会使库里原来的文件消失
 
 快速克隆仓库
 git clone git@github.com:sufuzhi/gitskills.git
@@ -142,6 +143,98 @@ git branch --set-upstream-to=origin/dev dev
 git rebase
 rebase操作可以把本地未push的分叉提交历史整理成直线；
 rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+--------------------------------------------------------------------------------------------
+创建标签
+git tag v1.0
+
+查看所有标签
+git tag
+
+对某次提交打标签（commit id）
+git tag v0.9 f52c633
+
+还可以创建带有说明的标签，用-a指定标签名，-m指定说明文字：
+$ git tag -a v0.1 -m "version 0.1 released" 1094adb
+
+查看标签信息
+git show <tagname>
+
+删除标签
+git tag -d <tagname>
+
+推送某个标签到远程，使用命令
+git push origin <tagname>
+
+一次性推送全部尚未推送到远程的本地标签：
+$ git push origin --tags
+
+如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除：
+git tag -d v0.9
+然后，从远程删除。删除命令也是push，但是格式如下：
+$ git push origin :refs/tags/v0.9
+------------------------------------------------------------------------------------
+使用GitHub
+
+访问bootstrap的项目主页https://github.com/twbs/bootstrap，点“Fork”就在自己的账号下克隆了一个bootstrap仓库，
+然后，从自己的账号下clone：
+git clone git@github.com:sufuzhi/bootstrap.git
+
+如果你希望bootstrap的官方库能接受你的修改，你就可以在GitHub上发起一个pull request。当然，对方是否接受你的pull request就不一定了。
+
+如果你没能力修改bootstrap，但又想要试一把pull request，那就Fork一下我的仓库：https://github.com/michaelliao/learngit，创建一个your-github-id.txt的文本文件，写点自己学习Git的心得，然后推送一个pull request给我，我会视心情而定是否接受。
+
+使用码云
+上传自己的SSH公钥
+创建一个新的项目
+把它和码云的远程库关联：
+git remote add origin git@gitee.com:sufuzhi/learngit.git
+
+之后，就可以正常地用git push和git pull推送了！
+
+如果在使用命令git remote add时报错：
+git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+fatal: remote origin already exists.
+这说明本地库已经关联了一个名叫origin的远程库，此时，可以先用git remote -v查看远程库信息：
+
+如果是该远程库已指向GitHub。我们可以删除已有的GitHub远程库：
+git remote rm origin
+再关联码云的远程库
+
+一个本地库能不能既关联GitHub，又关联码云：：
+
+先删除已关联的名为origin的远程库：
+git remote rm origin
+
+然后，先关联GitHub的远程库（注意，远程库的名称叫github，不叫origin了。）：
+git remote add github git@github.com:sufuzhi/learngit.git
+
+再关联码云的远程库（远程库的名称叫gitee，不叫origin）：
+git remote add gitee git@gitee.com:sufuzhi/learngit.git
+
+git remote -v查看远程库信息，可以看到两个远程库：
+
+如果要推送到GitHub，使用命令：
+git push github master
+
+如果要推送到码云，使用命令：
+git push gitee master
+
+码云也同样提供了Pull request功能，可以让其他小伙伴参与到开源项目中来。你可以通过Fork我的仓库：https://gitee.com/liaoxuefeng/learngit，创建一个your-gitee-id.txt的文本文件， 写点自己学习Git的心得，然后推送一个pull request给我，这个仓库会在码云和GitHub做双向同步。
+-----------------------------------------------------------------------------
+自定义Git
+
+让Git显示颜色，会让命令输出看起来更醒目
+git config --global color.ui true
+
+
+
+
+
+
+
+
+
+
 
 
 
